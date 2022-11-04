@@ -8,6 +8,8 @@ import type { SubtractParams } from '@pesos/core';
  * @param subtrahend - The Dinero object to subtract.
  *
  * @returns A new Dinero object.
+ *
+ * @public
  */
 export function subtract<TAmount>(
   ...[minuend, subtrahend]: SubtractParams<TAmount>

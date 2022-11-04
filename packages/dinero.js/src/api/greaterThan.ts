@@ -8,6 +8,8 @@ import type { GreaterThanParams } from '@pesos/core';
  * @param comparator - The Dinero object to compare to.
  *
  * @returns Whether the Dinero to compare is greater than the other.
+ *
+ * @public
  */
 export function greaterThan<TAmount>(
   ...[dineroObject, comparator]: GreaterThanParams<TAmount>

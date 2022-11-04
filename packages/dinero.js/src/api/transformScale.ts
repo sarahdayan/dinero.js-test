@@ -9,6 +9,8 @@ import type { TransformScaleParams } from '@pesos/core';
  * @param divide - A custom divide function.
  *
  * @returns A new Dinero object.
+ *
+ * @public
  */
 export function transformScale<TAmount>(
   ...[dineroObject, newScale, divide]: TransformScaleParams<TAmount>

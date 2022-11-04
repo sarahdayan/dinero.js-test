@@ -7,6 +7,8 @@ import type { MinimumParams } from '@pesos/core';
  * @param dineroObjects - The Dinero objects to minimum.
  *
  * @returns A new Dinero object.
+ *
+ * @public
  */
 export function minimum<TAmount>(...[dineroObjects]: MinimumParams<TAmount>) {
   const { calculator } = dineroObjects[0];
