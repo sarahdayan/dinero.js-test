@@ -1,3 +1,22 @@
+# [2.0.0-alpha.9](https://github.com/johnhooks/dinero.js/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2022-11-04)
+
+
+### Bug Fixes
+
+* **currencies:** add missing ANG export ([#447](https://github.com/johnhooks/dinero.js/issues/447)) ([8a0f67b](https://github.com/johnhooks/dinero.js/commit/8a0f67bda699ca8082d7a68def21a9d11fa5f1a8))
+* **trimScale:** check for zero value in countTrailingZeros ([#448](https://github.com/johnhooks/dinero.js/issues/448)) ([6eefe8b](https://github.com/johnhooks/dinero.js/commit/6eefe8b17c2a3497f836301e6001b05901ac9dec))
+
+
+### Features
+
+* provide better support for non-decimal currencies ([#10](https://github.com/johnhooks/dinero.js/issues/10)) ([c75f1d9](https://github.com/johnhooks/dinero.js/commit/c75f1d99adde8631aa76087c52689f5505c3346e))
+
+
+### Refactor Build
+
+* add `api-extractor` to rollup types declarations (([b3c8f4f](https://github.com/johnhooks/dinero.js/commit/b3c8f4f81e11b58843eabed4d1f407e0eb330b35))
+
+
 # [2.0.0-alpha.8](https://github.com/dinerojs/dinero.js/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2021-08-08)
 
 ### Bug Fixes
