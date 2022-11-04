@@ -1,4 +1,4 @@
-import type { TransformOperation } from '@dinero.js/core';
+import type { TransformOperation } from '@pesos/core';
 
 /**
  * Transforms an value to a number.

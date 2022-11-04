@@ -1,5 +1,5 @@
-import { toUnit as coreToUnit } from '@dinero.js/core';
-import type { ToUnitParams } from '@dinero.js/core';
+import { toUnit as coreToUnit } from '@pesos/core';
+import type { ToUnitParams } from '@pesos/core';
 
 /**
  * Get the amount of a Dinero object in units.
