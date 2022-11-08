@@ -14,7 +14,7 @@ import * as url from 'url';
 /**
  * Load the currency data array.
  *
- * @returns {Array<CurrencyData>} - Returns a array of currency data objects.
+ * @returns {Promise<Array<CurrencyData>>} - Returns a array of currency data objects.
  */
 export async function getCurrencyData() {
   const raw = await fs.readFile(
