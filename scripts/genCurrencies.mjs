@@ -30,7 +30,7 @@ const dirExists = (dirPath) =>
  * Generate a set of currency source files.
  *
  * @param {string} outputDir - The directory to output the source files into.
- * @param {formatFn} formatFn - The.
+ * @param {formatFn} formatFn - The format function used to generate individual currency files.
  * @returns {Promise<void>} - Returns a Promise that resolves when all the files are generated.
  */
 export async function genCurrencies(outputDir, formatFn) {
