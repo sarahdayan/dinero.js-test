@@ -1,3 +1,6 @@
+/**
+ * @public
+ */
 export type Currency<TAmount> = {
   /**
    * The unique code of the currency.
