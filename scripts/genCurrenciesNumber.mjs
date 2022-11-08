@@ -20,8 +20,6 @@ genCurrencies(
 
       /**
        * ${description}.
-       *
-       * @public
        */
       export const ${code}: Currency<number> = {
         code: '${code}',

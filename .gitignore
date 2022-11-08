@@ -5,5 +5,3 @@ dist
 temp
 .DS_Store
 .env
-
-packages/currencies/src/iso4217
