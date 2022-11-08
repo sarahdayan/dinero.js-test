@@ -7,11 +7,11 @@ import { genCurrencies } from './genCurrencies.mjs';
 genCurrencies(
   path.resolve(
     url.fileURLToPath(new URL('.', import.meta.url)), // __dirname es module style
-    '../src/iso4217/amendments/168'
+    '../packages/currencies/src/iso4217/amendments/168'
   ),
   ({ base, code, description, exponent }) =>
     `
-      import type { Currency } from '@dinero.js/core';
+      import type { Currency } from '../../../types';
 
       /**
        * ${description}.
