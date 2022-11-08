@@ -7,7 +7,7 @@
  * @property {number} exponent
  */
 
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import path from 'path';
 import * as url from 'url';
 
@@ -17,7 +17,7 @@ import * as url from 'url';
  * @returns {Array<CurrencyData>} - Returns a array of currency data objects.
  */
 export async function getCurrencyData() {
-  const raw = await fs.promises.readFile(
+  const raw = await fs.readFile(
     path.resolve(
       url.fileURLToPath(new URL('.', import.meta.url)), // __dirname es module style
       '../data/iso4217/amendments/168.json'
