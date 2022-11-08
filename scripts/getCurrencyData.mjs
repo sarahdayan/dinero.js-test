@@ -16,7 +16,7 @@ import * as url from 'url';
  *
  * @returns {Array<CurrencyData>} - Returns a array of currency data objects.
  */
-export async function getCurrencies() {
+export async function getCurrencyData() {
   const raw = await fs.promises.readFile(
     path.resolve(
       url.fileURLToPath(new URL('.', import.meta.url)), // __dirname es module style

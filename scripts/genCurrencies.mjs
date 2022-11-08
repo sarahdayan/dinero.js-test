@@ -1,7 +1,7 @@
 /* eslint-disable functional/no-expression-statement */
 
 /**
- * @typedef {import('./getCurrencies.mjs').CurrencyData} CurrencyData
+ * @typedef {import('./getCurrencyData.mjs').CurrencyData} CurrencyData
  *
  * @callback formatFn
  * @param {CurrencyData} currency - The currency data to transform into a source file.
@@ -14,7 +14,7 @@ import path from 'path';
 // eslint-disable-next-line import/default
 import prettier from 'prettier';
 
-import currencies from './getCurrencies.mjs';
+import { getCurrencyData } from './getCurrencyData.mjs';
 
 // prettier requires this to import into an es module without error.
 // eslint-disable-next-line import/no-named-as-default-member
@@ -34,6 +34,8 @@ const dirExists = (dirPath) =>
  * @returns {Promise<void>} - Returns a Promise that resolves when all the files are generated.
  */
 export async function genCurrencies(outputDir, formatFn) {
+  const currencies = await getCurrencyData();
+
   if (!(await dirExists(outputDir))) {
     await fs.mkdir(outputDir, { recursive: true });
   }
