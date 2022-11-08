@@ -1,5 +1,5 @@
 /**
- * @typedef Currency
+ * @typedef CurrencyData
  * @type {object}
  * @property {number} base
  * @property {string} code
@@ -14,7 +14,7 @@ import * as url from 'url';
 /**
  * Load the currency data array.
  *
- * @returns {Array<Currency>} - Returns a array of currency data objects.
+ * @returns {Array<CurrencyData>} - Returns a array of currency data objects.
  */
 export async function getCurrencies() {
   const raw = await fs.promises.readFile(
