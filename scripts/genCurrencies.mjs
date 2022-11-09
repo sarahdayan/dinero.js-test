@@ -61,11 +61,8 @@ export async function genCurrencies(outputDir, formatFn) {
   // Generate index ts file
   const indexModuleText = currencies
     .sort((a, b) => a.code.localeCompare(b))
-    .reduce(
-      (acc, current) =>
-        `${acc}export * from './${current.code.toLowerCase()}';\n`,
-      ''
-    );
+    .map((current) => `export * from './${current.code.toLowerCase()}';`)
+    .join("\n");
 
   await fs.writeFile(
     path.join(outputDir, 'index.ts'),
