@@ -1,10 +1,5 @@
 /**
- * @typedef CurrencyData
- * @type {object}
- * @property {number} base
- * @property {string} code
- * @property {string} description
- * @property {number} exponent
+ * @typedef {import("./genCurrencies").CurrencyData} CurrencyData
  */
 
 import { promises as fs } from 'fs';
@@ -23,5 +18,5 @@ export async function getCurrencyData() {
       '../data/iso4217/amendments/168.json'
     )
   );
-  return JSON.parse(raw);
+  return JSON.parse(raw.toString());
 }

@@ -43,8 +43,9 @@
     "build:types": "yarn run build:tsc && api-extractor run --local",
     "build:umd:cjs": "rollup --config",
     "build": "yarn build:clean && yarn build:umd:cjs && yarn build:esm && yarn build:types",
-    "generate": "yarn generate:currencies-number",
-    "generate:currencies-number": "node ../../scripts/genCurrenciesNumber.mjs",
+    "generate": "yarn generate:currencies",
+    "generate:clean": "rimraf ./src/iso4217/amendments",
+    "generate:currencies": "node ../../scripts/genCurrencies.mjs",
     "on:change": "concurrently \"yarn build:esm\" \"yarn build:types\"",
     "prepare": "yarn generate && yarn build:esm && yarn build:types",
     "watch": "watch \"yarn on:change\" --ignoreDirectoryPattern \"/dist/\""
