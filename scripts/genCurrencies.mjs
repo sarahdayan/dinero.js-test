@@ -43,6 +43,8 @@ function createCurrencyConfig({ genericType, imports, mapNumber }) {
       ${imports ? imports.map((text) => `${text}\n`) : ''}
       /**
        * ${description}.
+       *
+       * @public
        */
       export const ${code}: Currency<${genericType}> = {
         code: '${code}',
@@ -128,7 +130,7 @@ build()
   // eslint-disable-next-line  promise/always-return
   .then(() => {
     const elapsed = Math.floor((performance.now() - start) / 10) / 100;
-    const msg = `Dinero.js currency generation successful\n💸  Done in ${elapsed}s`;
+    const msg = `Dinero.js currency generation successful\n😸  Done in ${elapsed}s`;
     console.log(msg);
   })
   .catch((error) => {
