@@ -1,4 +1,4 @@
-/* eslint-disable functional/no-expression-statement, valid-jsdoc, jsdoc/require-description */
+/* eslint-disable functional/no-expression-statement,functional/no-throw-statement, valid-jsdoc, jsdoc/require-description, no-console */
 
 /**
  * @typedef {import("./genCurrencies").CurrencyData} CurrencyData
@@ -11,6 +11,7 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
+import { performance } from 'perf_hooks';
 import * as url from 'url';
 
 // eslint-disable-next-line import/default
@@ -37,7 +38,7 @@ const dirExists = (dirPath) =>
 function createCurrencyConfig({ genericType, imports, mapNumber }) {
   return {
     genericType,
-    generateFn: ({ code, description, ...currency }) => `
+    generateFn: ({ base, code, description, exponent }) => `
       import type { Currency } from '../../../../types';
       ${imports ? imports.map((text) => `${text}\n`) : ''}
       /**
@@ -45,8 +46,8 @@ function createCurrencyConfig({ genericType, imports, mapNumber }) {
        */
       export const ${code}: Currency<${genericType}> = {
         code: '${code}',
-        base: ${mapNumber(currency.base)},
-        exponent: ${mapNumber(currency.exponent)},
+        base: ${mapNumber(base)},
+        exponent: ${mapNumber(exponent)},
       };`,
   };
 }
@@ -121,4 +122,16 @@ export async function build() {
   await Promise.all(currencyPromises);
 }
 
-build();
+const start = performance.now();
+
+build()
+  // eslint-disable-next-line  promise/always-return
+  .then(() => {
+    const elapsed = Math.floor((performance.now() - start) / 10) / 100;
+    const msg = `Dinero.js currency generation successful\n💸  Done in ${elapsed}s`;
+    console.log(msg);
+  })
+  .catch((error) => {
+    console.log(`Dinero.js currency generation failed`);
+    throw error;
+  });
