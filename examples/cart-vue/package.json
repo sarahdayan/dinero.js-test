@@ -1,5 +1,6 @@
 {
   "name": "@dinero.js/example-cart-vue",
+  "private": true,
   "version": "2.0.0-alpha.9",
   "scripts": {
     "build:clean": "rimraf ./dist",
